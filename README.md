@@ -1,18 +1,18 @@
-# bolt.diy
+# OpenWebdev
 
-[![bolt.diy: AI-Powered Full-Stack Web Development in the Browser](./public/social_preview_index.jpg)](https://bolt.diy)
+[![OpenWebdev: AI-Powered Full-Stack Web Development in the Browser](./public/social_preview_index.jpg)](https://openwebdev.local)
 
-Welcome to bolt.diy, the official open source version of Bolt.new, which allows you to choose the LLM that you use for each prompt! Currently, you can use OpenAI, Anthropic, Ollama, OpenRouter, Gemini, LMStudio, Mistral, xAI, HuggingFace, DeepSeek, or Groq models - and it is easily extended to use any other model supported by the Vercel AI SDK! See the instructions below for running this locally and extending it to include more models.
-
------
-Check the [bolt.diy Docs](https://stackblitz-labs.github.io/bolt.diy/) for more offical installation instructions and more informations.
+Welcome to OpenWebdev, the official open source version of Bolt.new, which allows you to choose the LLM that you use for each prompt! Currently, you can use OpenAI, Anthropic, Ollama, OpenRouter, Gemini, LMStudio, Mistral, xAI, HuggingFace, DeepSeek, or Groq models - and it is easily extended to use any other model supported by the Vercel AI SDK! See the instructions below for running this locally and extending it to include more models.
 
 -----
-Also [this pinned post in our community](https://thinktank.ottomator.ai/t/videos-tutorial-helpful-content/3243) has a bunch of incredible resources for running and deploying bolt.diy yourself!
+Check the [OpenWebdev Docs](https://docs.openwebdev.local) for more official installation instructions and more information.
 
-We have also launched an experimental agent called the "bolt.diy Expert" that can answer common questions about bolt.diy. Find it here on the [oTTomator Live Agent Studio](https://studio.ottomator.ai/).
+-----
+Also [this pinned post in our community](https://community.openwebdev.local) has a bunch of incredible resources for running and deploying OpenWebdev yourself!
 
-bolt.diy was originally started by [Cole Medin](https://www.youtube.com/@ColeMedin) but has quickly grown into a massive community effort to build the BEST open source AI coding assistant!
+We have also launched an experimental agent called the "OpenWebdev Expert" that can answer common questions about OpenWebdev. Find it here on our community platform.
+
+OpenWebdev was originally started by [Cole Medin](https://www.youtube.com/@ColeMedin) but has quickly grown into a massive community effort to build the BEST open source AI coding assistant!
 
 ## Table of Contents
 
@@ -28,11 +28,11 @@ bolt.diy was originally started by [Cole Medin](https://www.youtube.com/@ColeMed
 
 ## Join the community
 
-[Join the bolt.diy community here, in the oTTomator Think Tank!](https://thinktank.ottomator.ai)
+[Join the OpenWebdev community here!](https://community.openwebdev.local)
 
 ## Project management
 
-Bolt.diy is a community effort! Still, the core team of contributors aims at organizing the project in way that allows
+OpenWebdev is a community effort! Still, the core team of contributors aims at organizing the project in way that allows
 you to understand where the current areas of focus are.
 
 If you want to know what we are working on, what we are planning to work on, or if you want to contribute to the
@@ -110,11 +110,11 @@ project, please check the [project management guide](./PROJECT.md) to get starte
 
 If you're new to installing software from GitHub, don't worry! If you encounter any issues, feel free to submit an "issue" using the provided links or improve this documentation by forking the repository, editing the instructions, and submitting a pull request. The following instruction will help you get the stable branch up and running on your local machine in no time.
 
-Let's get you up and running with the stable version of Bolt.DIY!
+Let's get you up and running with the stable version of OpenWebdev!
 
 ## Quick Download
 
-[![Download Latest Release](https://img.shields.io/github/v/release/stackblitz-labs/bolt.diy?label=Download%20Bolt&sort=semver)](https://github.com/stackblitz-labs/bolt.diy/releases/latest) ← Click here to go the the latest release version!
+[![Download Latest Release](https://img.shields.io/github/v/release/xenonesis/openwebdev?label=Download%20OpenWebdev&sort=semver)](https://github.com/xenonesis/openwebdev/releases/latest) ← Click here to go the the latest release version!
 
 - Next **click source.zip**
 
@@ -145,7 +145,7 @@ Node.js is required to run the application.
 
 ## Running the Application
 
-You have two options for running Bolt.DIY: directly on your machine or using Docker.
+You have two options for running OpenWebdev: directly on your machine or using Docker.
 
 ### Option 1: Direct Installation (Recommended for Beginners)
 
@@ -196,7 +196,7 @@ This option requires some familiarity with Docker but provides a more isolated e
 
 ### Adding Your API Keys
 
-Setting up your API keys in Bolt.DIY is straightforward:
+Setting up your API keys in OpenWebdev is straightforward:
 
 1. Open the home page (main interface)
 2. Select your desired provider from the dropdown menu
@@ -243,13 +243,13 @@ This method is recommended for developers who want to:
 1. **Clone the Repository**:
 
    ```bash
-   git clone -b stable https://github.com/stackblitz-labs/bolt.diy.git
+   git clone -b stable https://github.com/xenonesis/openwebdev.git
    ```
 
 2. **Navigate to Project Directory**:
 
    ```bash
-   cd bolt.diy
+   cd openwebdev
    ```
 
 3. **Install Dependencies**:
@@ -274,7 +274,7 @@ This method is recommended for developers who want to:
 >**Open the WebUI to test (Default: http://localhost:5173)**
 >   - Beginngers: 
 >     - Try to use a sophisticated Provider/Model like Anthropic with Claude Sonnet 3.x Models to get best results
->     - Explanation: The System Prompt currently implemented in bolt.diy cant cover the best performance for all providers and models out there. So it works better with some models, then other, even if the models itself are perfect for >programming
+>     - Explanation: The System Prompt currently implemented in OpenWebdev cant cover the best performance for all providers and models out there. So it works better with some models, then other, even if the models itself are perfect for programming
 >     - Future: Planned is a Plugin/Extentions-Library so there can be different System Prompts for different Models, which will help to get better results
 
 #### Staying Updated
@@ -365,4 +365,4 @@ For answers to common questions, issues, and to see a list of recommended models
 # Licensing
 **Who needs a commercial WebContainer API license?**
 
-bolt.diy source code is distributed as MIT, but it uses WebContainers API that [requires licensing](https://webcontainers.io/enterprise) for production usage in a commercial, for-profit setting. (Prototypes or POCs do not require a commercial license.) If you're using the API to meet the needs of your customers, prospective customers, and/or employees, you need a license to ensure compliance with our Terms of Service. Usage of the API in violation of these terms may result in your access being revoked.
+OpenWebdev source code is distributed as MIT, but it uses WebContainers API that [requires licensing](https://webcontainers.io/enterprise) for production usage in a commercial, for-profit setting. (Prototypes or POCs do not require a commercial license.) If you're using the API to meet the needs of your customers, prospective customers, and/or employees, you need a license to ensure compliance with our Terms of Service. Usage of the API in violation of these terms may result in your access being revoked.

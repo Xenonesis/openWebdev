@@ -1,4 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <rect width="16" height="16" rx="2" fill="#8A5FFF" />
-  <path d="M7.398 9.091h-3.58L10.364 2 8.602 6.909h3.58L5.636 14l1.762-4.909Z" fill="#fff" />
+  <rect width="16" height="16" rx="2" fill="#2563EB" />
+  <g fill="#fff">
+    <!-- O -->
+    <circle cx="5" cy="6" r="2.5" fill="none" stroke="#fff" stroke-width="1.2"/>
+    <!-- W -->
+    <path d="M9 4 l0.8 6 l1.2-4 l1.2 4 l0.8-6" stroke="#fff" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Web dots/connection -->
+    <circle cx="8" cy="12" r="0.8" fill="#fff"/>
+    <circle cx="11" cy="12" r="0.8" fill="#fff"/>
+    <circle cx="5" cy="12" r="0.8" fill="#fff"/>
+    <line x1="5" y1="12" x2="8" y2="12" stroke="#fff" stroke-width="0.5"/>
+    <line x1="8" y1="12" x2="11" y2="12" stroke="#fff" stroke-width="0.5"/>
+  </g>
 </svg>
