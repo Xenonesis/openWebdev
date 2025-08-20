@@ -1,6 +1,6 @@
 # OpenWebdev
 
-[![OpenWebdev: AI-Powered Full-Stack Web Development in the Browser](./public/social_preview_index.jpg)](https://openwebdev.local)
+[![OpenWebdev: AI-Powered Full-Stack Web Development in the Browser](./public/social_preview_index.png)](https://openwebdev.local)
 
 Welcome to OpenWebdev, the official open source version of Bolt.new, which allows you to choose the LLM that you use for each prompt! Currently, you can use OpenAI, Anthropic, Ollama, OpenRouter, Gemini, LMStudio, Mistral, xAI, HuggingFace, DeepSeek, or Groq models - and it is easily extended to use any other model supported by the Vercel AI SDK! See the instructions below for running this locally and extending it to include more models.
 
@@ -105,6 +105,7 @@ project, please check the [project management guide](./PROJECT.md) to get starte
 - **Download projects as ZIP** for easy portability Sync to a folder on the host.
 - **Integration-ready Docker support** for a hassle-free setup.
 - **Deploy** directly to **Netlify**
+- **Electron Desktop App** - Run OpenWebdev as a desktop application
 
 ## Setup
 
@@ -145,7 +146,7 @@ Node.js is required to run the application.
 
 ## Running the Application
 
-You have two options for running OpenWebdev: directly on your machine or using Docker.
+You have multiple options for running OpenWebdev: directly on your machine, using Docker, or as a Desktop Application.
 
 ### Option 1: Direct Installation (Recommended for Beginners)
 
@@ -190,6 +191,36 @@ This option requires some familiarity with Docker but provides a more isolated e
 2. **Run the Container**:
    ```bash
    docker compose --profile development up
+   ```
+
+### Option 3: Desktop Application (Electron)
+
+OpenWebdev can be run as a desktop application using Electron:
+
+1. **Install Dependencies**:
+   ```bash
+   pnpm install
+   ```
+
+2. **Build Electron Dependencies**:
+   ```bash
+   pnpm run electron:build:deps
+   ```
+
+3. **Run the Desktop Application**:
+   ```bash
+   # Add your Electron run command here once available
+   ```
+
+4. **Building for Distribution**:
+   ```bash
+   # Build for all platforms
+   pnpm run electron:build:dist
+   
+   # Build for specific platforms
+   pnpm run electron:build:win
+   pnpm run electron:build:mac
+   pnpm run electron:build:linux
    ```
 
 ## Configuring API Keys and Providers
@@ -342,6 +373,11 @@ Remember to always commit your local changes or stash them before pulling update
 - **`pnpm run typegen`**: Generates TypeScript types using Wrangler.
 - **`pnpm run deploy`**: Deploys the project to Cloudflare Pages.
 - **`pnpm run lint:fix`**: Automatically fixes linting issues.
+- **`pnpm run electron:build:deps`**: Build Electron main and preload processes.
+- **`pnpm run electron:build:dist`**: Build Electron app for all platforms.
+- **`pnpm run electron:build:win`**: Build Electron app for Windows.
+- **`pnpm run electron:build:mac`**: Build Electron app for macOS.
+- **`pnpm run electron:build:linux`**: Build Electron app for Linux.
 
 ---
 
