@@ -7,7 +7,10 @@ import { Header } from '~/components/header/Header';
 import BackgroundRays from '~/components/ui/BackgroundRays';
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'OpenWebdev' }, { name: 'description', content: 'AI-Powered Full-Stack Web Development in the Browser' }];
+  return [
+    { title: 'OpenWebdev' },
+    { name: 'description', content: 'AI-Powered Full-Stack Web Development in the Browser' },
+  ];
 };
 
 export async function loader(args: LoaderFunctionArgs) {
