@@ -4,9 +4,9 @@ import type { IProviderSetting } from '~/types/model';
 import type { LanguageModelV1 } from 'ai';
 
 export default class ChutesProvider extends BaseProvider {
-  name = 'Chutes';
+  name = 'OpenWebdev';
   getApiKeyLink = 'https://llm.chutes.ai/';
-  labelForGetApiKey = 'Get Chutes API Key';
+  labelForGetApiKey = 'Get OpenWebdev API Key';
   icon = 'i-ph:rocket-launch';
 
   config = {
@@ -18,60 +18,49 @@ export default class ChutesProvider extends BaseProvider {
   staticModels: ModelInfo[] = [
     {
       name: 'zai-org/GLM-4.5-Air',
-      label: 'GLM-4.5-Air',
-      provider: 'Chutes',
+      label: 'Claude 4',
+      provider: 'OpenWebdev',
       maxTokenAllowed: 8000,
+    },
+    {
+      name: 'NousResearch/DeepHermes-3-Llama-3-8B-Preview',
+      label: 'DeepHermes-3-Llama-3-8B-Preview',
+      provider: 'OpenWebdev',
+      maxTokenAllowed: 8192,
+    },
+    {
+      name: 'agentica-org/DeepCoder-14B-Preview',
+      label: 'DeepCoder-14B-Preview',
+      provider: 'OpenWebdev',
+      maxTokenAllowed: 8192,
+    },
+    {
+      name: 'Qwen/Qwen3-Coder-30B-A3B-Instruct',
+      label: 'Qwen3-Coder-30B-A3B-Instruct',
+      provider: 'OpenWebdev',
+      maxTokenAllowed: 32768,
+    },
+    {
+      name: 'openai/gpt-oss-20b',
+      label: 'GPT-OSS-20B',
+      provider: 'OpenWebdev',
+      maxTokenAllowed: 8192,
+    },
+    {
+      name: 'tencent/Hunyuan-A13B-Instruct',
+      label: 'Hunyuan-A13B-Instruct',
+      provider: 'OpenWebdev',
+      maxTokenAllowed: 8192,
     },
   ];
 
   async getDynamicModels(
-    apiKeys?: Record<string, string>,
-    settings?: IProviderSetting,
-    serverEnv: Record<string, string> = {},
+    _apiKeys?: Record<string, string>,
+    _settings?: IProviderSetting,
+    _serverEnv: Record<string, string> = {},
   ): Promise<ModelInfo[]> {
-    const { baseUrl, apiKey } = this.getProviderBaseUrlAndKey({
-      apiKeys,
-      providerSettings: settings,
-      serverEnv,
-      defaultBaseUrlKey: 'CHUTES_API_BASE_URL',
-      defaultApiTokenKey: 'CHUTES_API_KEY',
-    });
-
-    if (!baseUrl || !apiKey) {
-      return [];
-    }
-
-    try {
-      const response = await fetch(`${baseUrl}/models`, {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-        },
-      });
-
-      if (!response.ok) {
-        return [];
-      }
-
-      const res = (await response.json()) as any;
-
-      if (!res.data || !Array.isArray(res.data)) {
-        return [];
-      }
-
-      const staticModelIds = this.staticModels.map((m) => m.name);
-
-      return res.data
-        .filter((model: any) => !staticModelIds.includes(model.id))
-        .map((model: any) => ({
-          name: model.id,
-          label: model.id,
-          provider: this.name,
-          maxTokenAllowed: model.context_length || 8000,
-        }));
-    } catch (error) {
-      console.error('Error fetching Chutes dynamic models:', error);
-      return [];
-    }
+    // Only return static free models - no dynamic model fetching
+    return [];
   }
 
   getModelInstance(options: {
