@@ -12,20 +12,44 @@ export default defineConfig((config) => {
   return {
     define: {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'import.meta.env.DEV': config.mode !== 'production',
+      'import.meta.env.PROD': config.mode === 'production',
     },
     build: {
       target: 'esnext',
+      minify: config.mode === 'production' ? 'terser' : false,
+      sourcemap: config.mode === 'production' ? false : true,
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name?.endsWith('.css')) {
+              return 'assets/css/[name]-[hash][extname]';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
+          chunkFileNames: 'assets/js/[name]-[hash].js',
+          entryFileNames: 'assets/js/[name]-[hash].js',
+        },
+      },
+      terserOptions: {
+        compress: {
+          drop_console: config.mode === 'production',
+          drop_debugger: config.mode === 'production',
+          pure_funcs: config.mode === 'production' ? ['console.log', 'console.debug'] : [],
+        },
+      },
+      chunkSizeWarningLimit: 1000,
     },
     plugins: [
       nodePolyfills({
-        include: ['buffer', 'process', 'util', 'stream'],
+        include: ['buffer', 'process', 'util', 'stream', 'path'],
         globals: {
           Buffer: true,
           process: true,
           global: true,
         },
         protocolImports: true,
-        exclude: ['child_process', 'fs', 'path'],
+        exclude: ['child_process', 'fs'],
       }),
       {
         name: 'buffer-polyfill',
